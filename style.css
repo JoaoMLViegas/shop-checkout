@@ -1,52 +1,238 @@
-* {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    height: 100vh;
-    font-family: Arial, sans-serif;
 }
 
 .page {
-    position: relative;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.page img {
-    width: 100%;
-    height: auto;
+.background-image {
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: url('resources/background-image.png') center/cover no-repeat;
+}
+
+.background-image h2 {
+    color: #f0f0f0;
+    padding: 5px 5px;
+}
+
+.items-count {
+    background: #1d1d1f;
+    padding: 5px 10px;  
+    border-radius: 16px;
+    margin: 25px 15px;
+    color: #f0f0f0;
+    font-size: 12px;
 }
 
 .checkout {
-    position: relative;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    margin: auto;
+    width: 90%;
+
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 100px 0px;
     z-index: 1;
+
+    display: flex;
+    flex-direction: row;
+    border-radius: 12px;
 }
 
-.checkout img {
-    max-width: 80px;
-    height: auto;
-    border-radius: 5px;
+.order-summary {
+    flex: 1;
+    background: #e5e7ea;
+    padding: 30px;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+    font-size: 16px;
+}
+
+.items-container {
+    border-bottom: 1px solid #d0d0d0;
+    padding-bottom: 16px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 20px;
+    padding: 12px 0;
+}
+
+.item-img-container {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    background: #f0f0f0;
+    border: 1px solid #d0d0d0;
+    border-radius: 12px;
+}
+
+.item-img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+
+}
+
+.item-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.item-name {
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-color {
+    color: #4f5763;
+    margin: 2px 0;
+}
+
+.item-quantity-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    
+}
+
+.item-quantity {
+    color: #4f5763;
+    padding: 32px 0 0 0;
+    margin: 0;
+}
+
+.item-price {
+    font-weight: bold;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 3px 0 0 0;
+    height: 24px;
+    width: 24px;
+}
+
+.coupon {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.coupon input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    font-size: inherit;
+}
+
+.apply-coupon {
+    background: #1d1d1f;
+    color: #f0f0f0;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: inherit;
+}
+
+.price-summary {
+    margin-top: 10px;
+}
+
+.price-summary p {
+    display: flex;
+    justify-content: space-between;
+    color: #4f5763;
+}
+
+.total {
+    color: #1d1d1f !important;
+    font-weight: bold;
+}
+
+.contact-info {
+    flex: 1;
+    background: #f0f0f0;
+    padding: 30px;
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+
+.contact-info h4 {
+    margin: 12px 0 32px 0;
+}
+
+.contact-info label {
+    font-size: 14px;
+}
+
+.contact-info input, .contact-info select {
+    width: 97%;
+    padding: 16px 0 16px 14px;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    margin: 10px 0px 28px 0px;
+    background: #f3f4f6;
+    font-size: 16px;
+}
+
+.address-group {
+    display: flex;
+    gap: 10px;
+}
+
+.address-group div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.address-group input, .address-group select {
+    width: 94%;
+}
+
+.continue {
+    width: 100%;
+    background: #1d1d1f;
+    color: #f0f0f0;
+    border: none;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
 }
 
 .author-info {
-    font-size: 14px;
     text-align: center;
-    margin-top: 16px;
-    color: rgb(55, 65, 81);
+    margin-top: 20px;
+    font-size: 12px;
+    color: #4f5763;
 }
 
 .author-info a {
     text-decoration: none;
+    color: #007bff;
 }
