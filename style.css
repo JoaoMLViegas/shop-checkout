@@ -174,7 +174,7 @@ body {
 
 .contact-info {
     flex: 1;
-    background: #f0f0f0;
+    background: #ffffff;
     padding: 30px;
     border-top-right-radius: inherit;
     border-bottom-right-radius: inherit;
@@ -235,4 +235,20 @@ body {
 .author-info a {
     text-decoration: none;
     color: #007bff;
+}
+
+@media (max-width: 720px) {
+    .checkout {
+        flex-direction: column;
+    }
+
+    .order-summary {
+        border-top-right-radius: 12px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .contact-info {
+        border-bottom-left-radius: 12px;
+    }
 }
